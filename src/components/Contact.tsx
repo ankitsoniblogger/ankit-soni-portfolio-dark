@@ -3,6 +3,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
 import { useState } from "react";
+import ThreeJSBackground from "./ThreeJSBackground";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,14 +13,37 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    alert('Thank you for your message! I\'ll get back to you soon.');
+    setIsSubmitting(true);
+    
+    try {
+      // For now, we'll simulate form submission
+      // In a real implementation, you'd send this to your backend
+      console.log('Form submitted:', formData);
+      
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Reset form
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+      });
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -56,8 +81,10 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 bg-background relative overflow-hidden">
+      <ThreeJSBackground theme="professional" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fadeInUp">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Get In <span className="text-gradient">Touch</span>
@@ -178,10 +205,15 @@ const Contact = () => {
                 <Button 
                   type="submit"
                   size="lg"
-                  className="w-full primary-gradient hover:scale-105 transition-smooth shadow-elegant text-lg py-6"
+                  disabled={isSubmitting}
+                  className="w-full primary-gradient hover:scale-105 transition-smooth shadow-elegant text-lg py-6 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+                
+                <p className="text-xs text-muted-foreground text-center mt-4">
+                  Your message will be sent to: hello@ankitsoni.in & ankitsoniblogger@gmail.com
+                </p>
               </div>
             </form>
           </div>
