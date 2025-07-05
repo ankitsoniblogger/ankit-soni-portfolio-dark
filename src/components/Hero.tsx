@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import Background3D from "./Background3D";
+import ThreeJSBackground from "./ThreeJSBackground";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -35,7 +35,7 @@ const Hero = () => {
   return (
     <section className="min-h-[85vh] hero-gradient flex items-center justify-center relative overflow-hidden">
       {/* 3D Background */}
-      <Background3D />
+      <ThreeJSBackground theme="developer" />
       
       {/* Gradient Overlays */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"></div>
