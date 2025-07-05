@@ -1,5 +1,5 @@
 import ThreeJSBackground from "./ThreeJSBackground";
-import profileImage from "@/assets/ankit-profile.jpg";
+import profileImage from "@/assets/ankit-soni.jpg";
 
 const About = () => {
   return (
