@@ -35,9 +35,7 @@ const Hero = () => {
   return (
     <section className="min-h-[85vh] hero-gradient flex items-center justify-center relative overflow-hidden">
       {/* 3D Background */}
-      <div className="absolute inset-0 -z-10">
-        <ThreeJSBackground theme="developer" />
-      </div>
+      <ThreeJSBackground theme="developer" />
       
       {/* Gradient Overlays */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5"></div>
