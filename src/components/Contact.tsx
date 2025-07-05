@@ -8,10 +8,10 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -19,21 +19,22 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // For now, we'll simulate form submission
       // In a real implementation, you'd send this to your backend
-      console.log('Form submitted:', formData);
-      
+      console.log("Form submitted:", formData);
+
       // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       // Reset form
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
       toast({
         title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+        description:
+          "Thank you for reaching out. I'll get back to you within 24 hours.",
       });
     } catch (error) {
       toast({
@@ -46,10 +47,12 @@ const Contact = () => {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -58,32 +61,35 @@ const Contact = () => {
       icon: Mail,
       label: "Email",
       value: "hello@ankitsoni.in",
-      link: "mailto:hello@ankitsoni.in"
+      link: "mailto:hello@ankitsoni.in",
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+971 52 210 4014",
-      link: "tel:+971522104014"
+      link: "tel:+971522104014",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "ankitsoniblogger",
-      link: "https://www.linkedin.com/in/ankitsoniblogger/"
+      link: "https://www.linkedin.com/in/ankitsoniblogger/",
     },
     {
       icon: Github,
       label: "GitHub",
       value: "ankitsoniblogger",
-      link: "https://github.com/ankitsoniblogger/"
-    }
+      link: "https://github.com/ankitsoniblogger/",
+    },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-20 bg-background relative overflow-hidden"
+    >
       <ThreeJSBackground theme="professional" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fadeInUp">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -91,7 +97,8 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 primary-gradient mx-auto rounded-full mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to start your next project? Let's discuss how I can help bring your vision to life
+            Ready to start your next project? Let's discuss how I can help bring
+            your vision to life
           </p>
         </div>
 
@@ -99,22 +106,34 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="animate-fadeInLeft">
             <div className="card-gradient p-8 rounded-2xl border border-border/50 shadow-card h-fit">
-              <h3 className="text-2xl font-bold mb-8 text-primary">Let's Connect</h3>
-              
+              <h3 className="text-2xl font-bold mb-8 text-primary">
+                Let's Connect
+              </h3>
+
               <div className="space-y-6 mb-8">
                 {contactInfo.map((info, index) => (
                   <a
                     key={info.label}
                     href={info.link}
-                    target={info.label === "LinkedIn" || info.label === "GitHub" ? "_blank" : undefined}
-                    rel={info.label === "LinkedIn" || info.label === "GitHub" ? "noopener noreferrer" : undefined}
+                    target={
+                      info.label === "LinkedIn" || info.label === "GitHub"
+                        ? "_blank"
+                        : undefined
+                    }
+                    rel={
+                      info.label === "LinkedIn" || info.label === "GitHub"
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
                     className="flex items-center gap-4 p-4 rounded-xl bg-muted/20 hover:bg-primary/10 transition-smooth group"
                   >
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
                       <info.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="font-medium text-foreground">{info.label}</div>
+                      <div className="font-medium text-foreground">
+                        {info.label}
+                      </div>
                       <div className="text-muted-foreground group-hover:text-primary transition-smooth">
                         {info.value}
                       </div>
@@ -122,12 +141,14 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
-              
+
               <div className="border-t border-border/50 pt-6">
-                <h4 className="font-semibold mb-3 text-foreground">Based in Dubai, UAE</h4>
+                <h4 className="font-semibold mb-3 text-foreground">
+                  Based in Dubai, UAE
+                </h4>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Working with clients worldwide • Available for remote collaboration • 
-                  Open to freelance and full-time opportunities
+                  Working with clients worldwide • Available for remote
+                  collaboration • Open to freelance and full-time opportunities
                 </p>
               </div>
             </div>
@@ -135,13 +156,21 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fadeInRight">
-            <form onSubmit={handleSubmit} className="card-gradient p-8 rounded-2xl border border-border/50 shadow-card">
-              <h3 className="text-2xl font-bold mb-8 text-primary">Send a Message</h3>
-              
+            <form
+              onSubmit={handleSubmit}
+              className="card-gradient p-8 rounded-2xl border border-border/50 shadow-card"
+            >
+              <h3 className="text-2xl font-bold mb-8 text-primary">
+                Send a Message
+              </h3>
+
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-2 text-foreground"
+                    >
                       Full Name *
                     </label>
                     <Input
@@ -155,7 +184,10 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-2 text-foreground"
+                    >
                       Email Address *
                     </label>
                     <Input
@@ -170,9 +202,12 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2 text-foreground">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium mb-2 text-foreground"
+                  >
                     Subject *
                   </label>
                   <Input
@@ -185,9 +220,12 @@ const Contact = () => {
                     className="bg-muted/20 border-border/50 focus:border-primary transition-smooth"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2 text-foreground"
+                  >
                     Message *
                   </label>
                   <Textarea
@@ -201,8 +239,8 @@ const Contact = () => {
                     className="bg-muted/20 border-border/50 focus:border-primary transition-smooth resize-none"
                   />
                 </div>
-                
-                <Button 
+
+                <Button
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
@@ -210,9 +248,9 @@ const Contact = () => {
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
-                
+
                 <p className="text-xs text-muted-foreground text-center mt-4">
-                  Your message will be sent to: hello@ankitsoni.in & ankitsoniblogger@gmail.com
+                  Thank you for reaching out! I'll get back to you shortly.
                 </p>
               </div>
             </form>

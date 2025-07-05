@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, ChartNoAxesCombined, CodeXml } from "lucide-react";
+import {
+  ArrowDown,
+  ChartNoAxesCombined,
+  CodeXml,
+  Download,
+} from "lucide-react";
 import { useState, useEffect } from "react";
 import ThreeJSBackground from "./ThreeJSBackground";
 
@@ -127,12 +132,13 @@ const Hero = () => {
               size="lg"
               className="code-gradient hover:scale-105 transition-elastic shadow-float text-lg px-8 py-6 glow-code"
               onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
+                window.open(
+                  "https://drive.google.com/file/d/1ApXOf6ZGJU2uMSnlxJE5I3OUTPs89el3/view",
+                  "_blank"
+                )
               }
             >
-              Start a Project
+              Download Resume <Download />
             </Button>
             <Button
               variant="outline"
