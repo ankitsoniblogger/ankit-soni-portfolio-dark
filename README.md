@@ -1,73 +1,156 @@
-# Welcome to your Lovable project
+# Ankit Soni - Portfolio Website
 
-## Project info
+A modern, responsive portfolio website showcasing full-stack development and digital marketing expertise.
 
-**URL**: https://lovable.dev/projects/ce048f95-6765-4cc7-841f-bb8e06ca50f3
+## 🌐 Live Website
 
-## How can I edit this code?
+**URL**: [ankitsoni.in](https://ankitsoni.in)
 
-There are several ways of editing your application.
+## 👨‍💻 About
 
-**Use Lovable**
+This is the personal portfolio website of **Ankit Soni**, a Full Stack Developer & Digital Marketer with expertise in modern web technologies and performance-driven digital marketing strategies.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ce048f95-6765-4cc7-841f-bb8e06ca50f3) and start prompting.
+## ✨ Features
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Modern Design**: Dark mode with glassmorphism effects and smooth animations
+- **Interactive 3D Background**: Three.js powered geometric animations
+- **Responsive Layout**: Fully optimized for all device sizes
+- **Performance Optimized**: Fast loading with modern web practices
+- **SEO Friendly**: Comprehensive meta tags and structured data
+- **Contact Integration**: WhatsApp integration and contact form
+- **Animated UI**: Smooth transitions and micro-interactions
 
-**Use your preferred IDE**
+## 🏗️ Website Sections
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Hero Section**: Animated introduction with typewriter effect
+- **About**: Personal background and professional journey
+- **Skills**: Technical expertise in development and marketing
+- **Featured Projects**: Showcase of notable work and achievements
+- **Experience**: Professional work history and accomplishments
+- **Certifications**: Industry certifications and continuous learning
+- **Contact**: Multiple ways to get in touch
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Technologies Used
 
-Follow these steps:
+### Frontend Development
+- **React.js** - Modern JavaScript library
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Three.js** - 3D graphics and animations
+- **Vite** - Fast build tool and development server
+- **Shadcn/ui** - Modern component library
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Backend & Tools
+- **WordPress** - Content management and custom solutions
+- **PHP** - Server-side scripting
+- **Node.js** - JavaScript runtime
+- **MySQL** - Database management
+- **Supabase** - Backend as a service
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Digital Marketing Stack
+- **Facebook Ads** - Social media advertising
+- **Google Ads** - Search and display advertising
+- **SEO** - Search engine optimization
+- **Analytics** - Performance tracking and insights
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🚀 Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to project directory
+cd ankit-soni-portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build for Production
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Build the project
+npm run build
 
-**Use GitHub Codespaces**
+# Preview the build
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📁 Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/          # React components
+│   ├── ui/             # Reusable UI components
+│   ├── Hero.tsx        # Hero section
+│   ├── About.tsx       # About section
+│   ├── Skills.tsx      # Skills showcase
+│   ├── Projects.tsx    # Featured projects
+│   ├── Experience.tsx  # Work experience
+│   ├── Certifications.tsx
+│   ├── Contact.tsx     # Contact form
+│   └── ...
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── pages/              # Page components
+└── assets/             # Static assets
+```
 
-This project is built with:
+## 🎨 Design System
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The website uses a comprehensive design system with:
+- Custom CSS variables for consistent theming
+- Tailwind CSS for utility-first styling
+- HSL color system for better color management
+- Responsive breakpoints for all screen sizes
+- Animation utilities for smooth interactions
 
-## How can I deploy this project?
+## 📱 Responsive Design
 
-Simply open [Lovable](https://lovable.dev/projects/ce048f95-6765-4cc7-841f-bb8e06ca50f3) and click on Share -> Publish.
+Fully responsive across all devices:
+- **Desktop**: Full-featured experience with animations
+- **Tablet**: Optimized layout and touch interactions
+- **Mobile**: Streamlined interface with essential features
 
-## Can I connect a custom domain to my Lovable project?
+## ⚡ Performance
 
-Yes, you can!
+- **Lazy Loading**: Images and components load on demand
+- **Code Splitting**: Optimized bundle sizes
+- **Modern Formats**: WebP images and optimized assets
+- **Fast Loading**: Sub-second initial page load
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📧 Contact Information
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Website**: [ankitsoni.in](https://ankitsoni.in)
+- **Email**: Available through contact form
+- **WhatsApp**: Integrated floating contact button
+- **LinkedIn**: Professional networking
+- **GitHub**: Code repositories and contributions
+
+## 🔧 Development
+
+This project was built with [Lovable](https://lovable.dev), an AI-powered development platform.
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 📄 License
+
+This project is personal portfolio website. All rights reserved.
+
+---
+
+*Built with ❤️ using modern web technologies*
