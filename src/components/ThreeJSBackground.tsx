@@ -23,15 +23,22 @@ const AnimatedShape = ({ position, scale, color, shape, rotationSpeed = 0.01 }: 
     }
   });
 
-  const shapeComponent = {
-    sphere: <Sphere ref={meshRef} args={[1, 32, 32]} position={position} scale={scale} />,
-    box: <Box ref={meshRef} args={[1, 1, 1]} position={position} scale={scale} />,
-    torus: <Torus ref={meshRef} args={[1, 0.4, 16, 32]} position={position} scale={scale} />
+  const ShapeComponent = () => {
+    switch (shape) {
+      case 'sphere':
+        return <Sphere ref={meshRef} args={[1, 32, 32]} position={position} scale={scale} />;
+      case 'box':
+        return <Box ref={meshRef} args={[1, 1, 1]} position={position} scale={scale} />;
+      case 'torus':
+        return <Torus ref={meshRef} args={[1, 0.4, 16, 32]} position={position} scale={scale} />;
+      default:
+        return <Sphere ref={meshRef} args={[1, 32, 32]} position={position} scale={scale} />;
+    }
   };
 
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-      {shapeComponent[shape]}
+      <ShapeComponent />
       <meshStandardMaterial color={color} metalness={0.6} roughness={0.2} />
     </Float>
   );
