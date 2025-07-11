@@ -1,76 +1,63 @@
 import { Button } from "@/components/ui/button";
 import ThreeJSBackground from "./ThreeJSBackground";
 import { ExternalLink, Github, Eye } from "lucide-react";
+import admissionTodayImage from "@/assets/project-admissiontoday.jpg";
+import qrImage from "@/assets/project-qr.jpg";
+import swissoImage from "@/assets/project-swisso.jpg";
+import durgeshImage from "@/assets/project-durgesh.jpg";
+import youngIndiansImage from "@/assets/project-youngindians.jpg";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Euroconnect.co",
+      title: "Admissiontoday.in",
       description:
-        "A comprehensive European business networking platform with advanced features for connecting professionals across borders.",
-      tech: [
-        "WordPress",
-        "Custom Development",
-        "SEO",
-        "Performance Optimization",
-      ],
-      category: "Business Platform",
+        "Top Education consultancy website in India helping students achieve their academic dreams with comprehensive guidance and support.",
+      tech: ["Next.js", "Node.js", "Strapi", "Firebase", "AWS", "PostgreSQL"],
+      category: "Education Platform",
       featured: true,
+      image: admissionTodayImage,
+      url: "https://admissiontoday.in",
+    },
+    {
+      title: "qr.ankitsoni.in",
+      description:
+        "Create, manage, and track your QR codes with advanced features including dynamic redirects and public sharing capabilities.",
+      tech: ["Vite", "Next.js", "AI", "Supabase"],
+      category: "SaaS Platform",
+      featured: true,
+      image: qrImage,
+      url: "https://qr.ankitsoni.in",
+    },
+    {
+      title: "Swisso360.com",
+      description:
+        "SWISSOFI helps clients grow their wealth by restructuring portfolio and building wealth systematically using Artificial Intelligence Strategies.",
+      tech: ["WordPress", "WP Page Bakery Builder", "SEO Plugin"],
+      category: "Financial Platform",
+      featured: false,
+      image: swissoImage,
+      url: "https://swisso360.com",
     },
     {
       title: "Durgeshsoni.com",
       description:
-        "Personal branding website for a professional consultant with modern design and conversion-focused marketing strategies.",
-      tech: [
-        "WordPress",
-        "Responsive Design",
-        "Digital Marketing",
-        "Brand Strategy",
-      ],
-      category: "Personal Branding",
-      featured: true,
+        "Personal website showcasing professional expertise and achievements in a modern, clean design with optimal user experience.",
+      tech: ["Next.js"],
+      category: "Personal Website",
+      featured: false,
+      image: durgeshImage,
+      url: "https://durgeshsoni.com",
     },
     {
-      title: "E-commerce Solutions",
+      title: "Youngindians.net",
       description:
-        "Custom WordPress e-commerce platforms with integrated payment gateways and marketing automation systems.",
-      tech: [
-        "WooCommerce",
-        "Payment Integration",
-        "Marketing Automation",
-        "Analytics",
-      ],
-      category: "E-commerce",
+        "Dream of Youth Development for Better Nation - A platform dedicated to empowering young Indians and fostering national development.",
+      tech: ["WordPress", "Elementor", "Custom PHP"],
+      category: "NGO Platform",
       featured: false,
-    },
-    {
-      title: "Marketing Campaigns",
-      description:
-        "Data-driven Facebook and Google Ads campaigns that generated significant ROI for various international clients.",
-      tech: [
-        "Facebook Ads",
-        "Google Ads",
-        "Analytics",
-        "Conversion Optimization",
-      ],
-      category: "Digital Marketing",
-      featured: false,
-    },
-    {
-      title: "SaaS Web Applications",
-      description:
-        "Modern React-based web applications with real-time features and seamless user experiences.",
-      tech: ["React.js", "Node.js", "Database Design", "API Development"],
-      category: "Web Application",
-      featured: false,
-    },
-    {
-      title: "Brand Identity Projects",
-      description:
-        "Complete brand identity solutions including logo design, website development, and digital marketing strategies.",
-      tech: ["Brand Design", "WordPress", "Social Media", "Content Strategy"],
-      category: "Branding",
-      featured: false,
+      image: youngIndiansImage,
+      url: "https://youngindians.net",
     },
   ];
 
@@ -92,20 +79,28 @@ const Projects = () => {
 
       {/* Project visual representation */}
       <div className="relative h-64 lg:h-80 overflow-hidden">
+        {/* Project image */}
+        <img 
+          src={project.image} 
+          alt={project.title}
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+        
+        {/* Overlay gradient */}
         <div
           className={`absolute inset-0 ${
-            project.category === "Business Platform"
-              ? "code-gradient"
-              : project.category === "Personal Branding"
-              ? "primary-gradient"
-              : project.category === "E-commerce"
-              ? "marketing-gradient"
-              : project.category === "Digital Marketing"
-              ? "marketing-gradient"
-              : project.category === "Web Application"
-              ? "code-gradient"
-              : "primary-gradient"
-          } opacity-60 group-hover:opacity-80 transition-all duration-700`}
+            project.category === "Education Platform"
+              ? "bg-gradient-to-br from-blue-600/70 to-purple-600/70"
+              : project.category === "SaaS Platform"
+              ? "bg-gradient-to-br from-green-600/70 to-teal-600/70"
+              : project.category === "Financial Platform"
+              ? "bg-gradient-to-br from-yellow-600/70 to-orange-600/70"
+              : project.category === "Personal Website"
+              ? "bg-gradient-to-br from-purple-600/70 to-pink-600/70"
+              : project.category === "NGO Platform"
+              ? "bg-gradient-to-br from-red-600/70 to-orange-600/70"
+              : "bg-gradient-to-br from-primary/70 to-primary/50"
+          } group-hover:opacity-60 transition-all duration-700`}
         ></div>
 
         {/* Animated geometric patterns */}
@@ -129,10 +124,16 @@ const Projects = () => {
 
         {/* Hover action buttons */}
         <div className="absolute top-6 right-6 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-          <button className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <button 
+            onClick={() => window.open(project.url, "_blank")}
+            className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+          >
             <Eye className="w-5 h-5 text-white" />
           </button>
-          <button className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <button 
+            onClick={() => window.open(project.url, "_blank")}
+            className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+          >
             <ExternalLink className="w-5 h-5 text-white" />
           </button>
         </div>
@@ -171,6 +172,7 @@ const Projects = () => {
           <Button
             variant="outline"
             size="lg"
+            onClick={() => window.open(project.url, "_blank")}
             className="flex-1 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
           >
             <Eye className="w-4 h-4 mr-2" />
@@ -178,6 +180,7 @@ const Projects = () => {
           </Button>
           <Button
             size="lg"
+            onClick={() => window.open(project.url, "_blank")}
             className="flex-1 code-gradient hover:scale-105 transition-all duration-300 shadow-lg"
           >
             <ExternalLink className="w-4 h-4 mr-2" />
@@ -217,12 +220,11 @@ const Projects = () => {
         >
           {[
             "All",
-            "Business Platform",
-            "Personal Branding",
-            "E-commerce",
-            "Digital Marketing",
-            "Web Application",
-            "Branding",
+            "Education Platform",
+            "SaaS Platform",
+            "Financial Platform",
+            "Personal Website",
+            "NGO Platform",
           ].map((category) => (
             <button
               key={category}
