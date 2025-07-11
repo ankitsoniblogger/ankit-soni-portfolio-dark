@@ -74,8 +74,6 @@ const Projects = () => {
       }`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background/90 z-10"></div>
 
       {/* Project visual representation */}
       <div className="relative h-64 lg:h-80 overflow-hidden">
@@ -86,29 +84,8 @@ const Projects = () => {
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
         
-        {/* Overlay gradient */}
-        <div
-          className={`absolute inset-0 ${
-            project.category === "Education Platform"
-              ? "bg-gradient-to-br from-blue-600/70 to-purple-600/70"
-              : project.category === "SaaS Platform"
-              ? "bg-gradient-to-br from-green-600/70 to-teal-600/70"
-              : project.category === "Financial Platform"
-              ? "bg-gradient-to-br from-yellow-600/70 to-orange-600/70"
-              : project.category === "Personal Website"
-              ? "bg-gradient-to-br from-purple-600/70 to-pink-600/70"
-              : project.category === "NGO Platform"
-              ? "bg-gradient-to-br from-red-600/70 to-orange-600/70"
-              : "bg-gradient-to-br from-primary/70 to-primary/50"
-          } group-hover:opacity-60 transition-all duration-700`}
-        ></div>
-
-        {/* Animated geometric patterns */}
-        <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-all duration-700">
-          <div className="absolute top-1/4 left-1/4 w-16 h-16 border border-white/30 rounded-full animate-spin-slow"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-8 h-8 bg-white/20 rounded transform rotate-45 animate-pulse"></div>
-          <div className="absolute top-1/2 right-1/3 w-12 h-1 bg-white/40 animate-bounce-gentle"></div>
-        </div>
+        {/* Subtle dark overlay for text readability only */}
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-all duration-700"></div>
 
         {/* Category and featured badges */}
         <div className="absolute top-6 left-6 z-20 flex gap-2">
@@ -236,7 +213,7 @@ const Projects = () => {
         </div>
 
         {/* Projects grid */}
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+        <div className="grid lg:grid-cols-3 gap-4 max-w-7xl mx-auto mb-16">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}
