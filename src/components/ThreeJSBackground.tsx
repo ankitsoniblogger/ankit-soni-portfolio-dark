@@ -30,18 +30,18 @@ interface ThreeJSBackgroundProps {
 
 const ThreeJSBackground = ({ theme = 'developer', className = "" }: ThreeJSBackgroundProps) => {
   const shapes = [
-    { position: [-2, 1, -3] as [number, number, number], color: "#3b82f6" },
-    { position: [2, -1, -2] as [number, number, number], color: "#8b5cf6" },
-    { position: [0, 2, -4] as [number, number, number], color: "#06b6d4" },
+    { position: [-2, 1, -3] as [number, number, number], color: "#10b981" },
+    { position: [2, -1, -2] as [number, number, number], color: "#059669" },
+    { position: [0, 2, -4] as [number, number, number], color: "#34d399" },
   ];
 
   return (
-    <div className={`absolute inset-0 -z-10 opacity-20 ${className}`}>
+    <div className={`absolute inset-0 -z-10 opacity-10 ${className}`}>
       <Canvas camera={{ position: [0, 0, 6], fov: 75 }}>
-        <ambientLight intensity={0.4} />
-        <pointLight position={[10, 10, 10]} intensity={0.5} />
+        <ambientLight intensity={0.3} />
+        <pointLight position={[10, 10, 10]} intensity={0.4} />
         
-        <Stars radius={100} depth={50} count={100} factor={2} saturation={0} fade />
+        <Stars radius={100} depth={50} count={50} factor={1} saturation={0} fade />
         
         {shapes.map((shape, index) => (
           <SimpleShape

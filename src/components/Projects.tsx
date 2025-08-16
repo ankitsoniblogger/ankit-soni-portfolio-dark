@@ -23,7 +23,7 @@ const Projects = () => {
       title: "qr.ankitsoni.in",
       description:
         "Create, manage, and track your QR codes with advanced features including dynamic redirects and public sharing capabilities.",
-      tech: ["Vite", "Next.js", "AI", "Supabase"],
+      tech: ["Vite", "Next.js", "AI", "PostgreSQL"],
       category: "SaaS Platform",
       featured: true,
       image: qrImage,
