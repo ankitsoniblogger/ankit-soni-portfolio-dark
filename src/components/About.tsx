@@ -1,4 +1,3 @@
-import ThreeJSBackground from "./ThreeJSBackground";
 import profileImage from "@/assets/ankit-soni.jpg";
 
 const About = () => {
@@ -7,7 +6,6 @@ const About = () => {
       id="about"
       className="py-20 section-gradient relative overflow-hidden"
     >
-      <ThreeJSBackground theme="professional" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
