@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import ThreeJSBackground from "./ThreeJSBackground";
+
 import { ExternalLink, Github, Eye } from "lucide-react";
 import admissionTodayImage from "@/assets/project-admissiontoday.jpg";
 import qrImage from "@/assets/project-qr.jpg";
@@ -176,7 +176,7 @@ const Projects = () => {
       id="projects"
       className="py-20 section-gradient relative overflow-hidden"
     >
-      <ThreeJSBackground theme="creative" />
+      
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20 animate-fadeInUp">

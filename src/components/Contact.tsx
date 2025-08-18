@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
 import { useState } from "react";
-import ThreeJSBackground from "./ThreeJSBackground";
+
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -88,7 +88,7 @@ const Contact = () => {
       id="contact"
       className="py-20 bg-background relative overflow-hidden"
     >
-      <ThreeJSBackground theme="professional" />
+      
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fadeInUp">

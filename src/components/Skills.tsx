@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ThreeJSBackground from "./ThreeJSBackground";
+
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("development");
@@ -214,7 +214,7 @@ const Skills = () => {
       id="skills"
       className="py-20 bg-background relative overflow-hidden"
     >
-      <ThreeJSBackground theme={activeTheme} />
+      
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
