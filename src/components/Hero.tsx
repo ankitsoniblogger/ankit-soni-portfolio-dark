@@ -35,8 +35,8 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20">
-      {/* Clean Background */}
-      <div className="absolute inset-0 bg-background"></div>
+      {/* Light Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/30 via-blue-50/20 to-background"></div>
       
       <div className="container mx-auto px-4 md:px-6 z-10 relative max-w-5xl">
         <div className="text-center animate-fade-in-up">
@@ -95,7 +95,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-12 md:mb-16">
             <Button
               size="lg"
-              className="primary-gradient hover:scale-105 transition-smooth shadow-elegant text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto"
+              className="primary-gradient hover:scale-105 transition-smooth shadow-3d text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto relative overflow-hidden group hover:shadow-3d-hover"
               onClick={() =>
                 window.open(
                   "https://drive.google.com/file/d/1ApXOf6ZGJU2uMSnlxJE5I3OUTPs89el3/view",
@@ -103,19 +103,22 @@ const Hero = () => {
                 )
               }
             >
-              Download Resume <Download className="ml-2 w-4 h-4" />
+              <span className="relative z-10">Download Resume</span>
+              <Download className="ml-2 w-4 h-4 relative z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto"
+              className="border-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-smooth shadow-3d-outline hover:shadow-3d text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto relative overflow-hidden group bg-white/50 backdrop-blur-sm"
               onClick={() =>
                 document
                   .getElementById("projects")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              View Portfolio
+              <span className="relative z-10">View Portfolio</span>
+              <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
           </div>
 

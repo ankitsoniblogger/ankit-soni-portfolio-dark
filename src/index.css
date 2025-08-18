@@ -246,8 +246,48 @@
     transition: all 0.2s ease;
   }
   
+  
   .card-hover-effect:hover {
     transform: translateY(-2px);
+  }
+  
+  /* 3D Button Effects */
+  .shadow-3d {
+    box-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 8px 16px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(0px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .shadow-3d:hover {
+    transform: translateY(-2px);
+  }
+  
+  .shadow-3d-hover:hover {
+    box-shadow: 
+      0 8px 16px rgba(0, 0, 0, 0.15),
+      0 16px 32px rgba(16, 185, 129, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .shadow-3d-outline {
+    box-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.05),
+      0 2px 4px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(16, 185, 129, 0.1);
+    transform: translateY(0px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .shadow-3d-outline:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+      0 6px 12px rgba(0, 0, 0, 0.1),
+      0 8px 16px rgba(16, 185, 129, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 }
 
