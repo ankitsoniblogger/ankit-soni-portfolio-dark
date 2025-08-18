@@ -31,12 +31,6 @@ const Hero = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Language/Technology Icons with modern SVGs
-  const LanguageIcon = ({ children, className = "", style }: { children: React.ReactNode, className?: string, style?: React.CSSProperties }) => (
-    <div className={`w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-card border border-border rounded-lg shadow-card hover:shadow-elegant transition-smooth hover:scale-105 ${className}`} style={style}>
-      {children}
-    </div>
-  );
 
   const leftSideIcons = [
     <svg viewBox="0 0 24 24" className="w-8 h-8 text-blue-500" fill="currentColor">
@@ -63,38 +57,47 @@ const Hero = () => {
   ];
 
   return (
-    <section className="min-h-[80vh] hero-gradient flex items-center justify-center relative overflow-hidden">
-      {/* Language Icons - Left Side */}
-      <div className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-6 z-10">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 hero-gradient"></div>
+      
+      {/* Language Icons - Left Side - Hidden on Mobile */}
+      <div className="hidden md:flex absolute left-8 lg:left-16 top-1/2 transform -translate-y-1/2 flex-col gap-8 z-10">
         {leftSideIcons.map((icon, index) => (
-          <LanguageIcon 
+          <div 
             key={index} 
-            className="animate-slide-up"
-            style={{ animationDelay: `${index * 0.2}s` }}
+            className="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center rounded-full hover:scale-110 transition-smooth opacity-60 hover:opacity-100"
+            style={{ 
+              animationDelay: `${index * 0.3}s`,
+              transform: `translateY(${Math.sin(index * 0.5) * 30}px)` 
+            }}
           >
             {icon}
-          </LanguageIcon>
+          </div>
         ))}
       </div>
 
-      {/* Language Icons - Right Side */}
-      <div className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-6 z-10">
+      {/* Language Icons - Right Side - Hidden on Mobile */}
+      <div className="hidden md:flex absolute right-8 lg:right-16 top-1/2 transform -translate-y-1/2 flex-col gap-8 z-10">
         {rightSideIcons.map((icon, index) => (
-          <LanguageIcon 
+          <div 
             key={index} 
-            className="animate-slide-up"
-            style={{ animationDelay: `${(index + 3) * 0.2}s` }}
+            className="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center rounded-full hover:scale-110 transition-smooth opacity-60 hover:opacity-100"
+            style={{ 
+              animationDelay: `${(index + 3) * 0.3}s`,
+              transform: `translateY(${Math.sin((index + 2) * 0.7) * 40}px)` 
+            }}
           >
             {icon}
-          </LanguageIcon>
+          </div>
         ))}
       </div>
 
-      <div className="container mx-auto pt-20 px-6 z-10 relative max-w-4xl">
+      <div className="container mx-auto px-4 md:px-6 z-10 relative max-w-5xl">
         <div className="text-center animate-fade-in-up">
           {/* Main Heading */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+          <div className="mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 tracking-tight leading-tight">
               Hi, I'm{" "}
               <span className="text-gradient">
                 Ankit Soni
@@ -109,7 +112,7 @@ const Hero = () => {
           </div>
 
           {/* Animated Subtitle */}
-          <h2 className="text-xl md:text-3xl lg:text-4xl text-muted-foreground mb-12 font-light min-h-[3rem] flex items-center justify-center">
+          <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-muted-foreground mb-8 md:mb-12 font-light min-h-[2rem] md:min-h-[3rem] flex items-center justify-center">
             <span
               className={`gradient-text-code font-semibold ${
                 isTyping ? "typing-cursor" : ""
@@ -119,22 +122,22 @@ const Hero = () => {
             </span>
           </h2>
 
-          {/* Description */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-3xl mx-auto">
-            <div className="glass-effect p-6 rounded-xl border border-border card-hover-effect">
+          {/* Description - Stack on mobile */}
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12 max-w-4xl mx-auto">
+            <div className="glass-effect p-4 md:p-6 rounded-xl border border-border card-hover-effect">
               <div className="flex items-center gap-2 mb-3">
-                <CodeXml className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold">Developer</h3>
+                <CodeXml className="w-5 h-5 text-primary flex-shrink-0" />
+                <h3 className="text-base md:text-lg font-semibold">Developer</h3>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Crafting scalable web applications with modern technologies.
                 From custom WordPress solutions to React applications.
               </p>
             </div>
-            <div className="glass-effect p-6 rounded-xl border border-border card-hover-effect">
+            <div className="glass-effect p-4 md:p-6 rounded-xl border border-border card-hover-effect">
               <div className="flex items-center gap-2 mb-3">
-                <ChartNoAxesCombined className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold">Marketer</h3>
+                <ChartNoAxesCombined className="w-5 h-5 text-primary flex-shrink-0" />
+                <h3 className="text-base md:text-lg font-semibold">Marketer</h3>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Driving growth through data-driven campaigns. Facebook Ads,
@@ -143,11 +146,11 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          {/* CTA Buttons - Stack on mobile */}
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-12 md:mb-16">
             <Button
               size="lg"
-              className="primary-gradient hover:scale-105 transition-smooth shadow-elegant text-lg px-8 py-6"
+              className="primary-gradient hover:scale-105 transition-smooth shadow-elegant text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto"
               onClick={() =>
                 window.open(
                   "https://drive.google.com/file/d/1ApXOf6ZGJU2uMSnlxJE5I3OUTPs89el3/view",
@@ -155,12 +158,12 @@ const Hero = () => {
                 )
               }
             >
-              Download Resume <Download />
+              Download Resume <Download className="ml-2 w-4 h-4" />
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth text-lg px-8 py-6"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto"
               onClick={() =>
                 document
                   .getElementById("projects")

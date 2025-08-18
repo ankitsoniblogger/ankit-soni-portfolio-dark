@@ -21,11 +21,34 @@ const Index = () => {
           <Hero />
         </section>
         
+        {/* Gradient Divider */}
+        <div className="h-24 bg-gradient-to-b from-background via-muted/30 to-background"></div>
+        
         <About />
+        
+        {/* Gradient Divider */}
+        <div className="h-16 bg-gradient-to-b from-background via-primary/5 to-background"></div>
+        
         <Skills />
+        
+        {/* Gradient Divider */}
+        <div className="h-16 bg-gradient-to-b from-background via-muted/20 to-section-gradient"></div>
+        
         <Projects />
+        
+        {/* Gradient Divider */}
+        <div className="h-16 bg-gradient-to-b from-section-gradient via-primary/5 to-background"></div>
+        
         <Experience />
+        
+        {/* Gradient Divider */}
+        <div className="h-16 bg-gradient-to-b from-background via-muted/10 to-background"></div>
+        
         <Certifications />
+        
+        {/* Gradient Divider */}
+        <div className="h-16 bg-gradient-to-b from-background via-primary/5 to-background"></div>
+        
         <Contact />
       </main>
       
