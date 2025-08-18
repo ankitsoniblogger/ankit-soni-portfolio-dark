@@ -1,10 +1,5 @@
 import { Button } from "@/components/ui/button";
-import {
-  ArrowDown,
-  ChartNoAxesCombined,
-  CodeXml,
-  Download,
-} from "lucide-react";
+import { ArrowDown, ChartNoAxesCombined, CodeXml, Download } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -32,11 +27,10 @@ const Hero = () => {
   };
 
 
-
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20">
-      {/* Light Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/30 via-blue-50/20 to-background"></div>
+      {/* Green Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-emerald-100/40 via-emerald-50/30 to-background"></div>
       
       <div className="container mx-auto px-4 md:px-6 z-10 relative max-w-5xl">
         <div className="text-center animate-fade-in-up">
@@ -49,10 +43,12 @@ const Hero = () => {
               </span>
             </h1>
             <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-green-500 text-sm font-medium">
-                Available for hire
-              </span>
+              <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3 py-1.5">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                <span className="text-emerald-600 text-sm font-medium">
+                  Available for hire
+                </span>
+              </div>
             </div>
           </div>
 
