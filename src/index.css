@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Portfolio Design System - Elegant Minimalism */
+/* Playful Orange & Green Design System */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    /* Modern Light Color Scheme */
+    /* Fresh Light Color Scheme */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -16,43 +17,42 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    /* Modern Emerald Primary */
-    --primary: 158 64% 52%;
+    /* Vibrant Orange Primary */
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 158 64% 62%;
+    --primary-glow: 25 95% 63%;
 
-    /* Warm Gray Secondary */
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 240 10% 3.9%;
+    /* Fresh Green Secondary */
+    --secondary: 120 60% 50%;
+    --secondary-foreground: 0 0% 98%;
 
     /* Neutral Muted */
     --muted: 210 40% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* Soft Accent */
-    --accent: 210 40% 96%;
-    --accent-foreground: 158 64% 52%;
+    /* Orange Accent */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 158 64% 52%;
+    --ring: 25 95% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Modern Portfolio Colors */
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --section-gradient: linear-gradient(180deg, hsl(210 40% 98%), hsl(0 0% 100%));
-    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --primary-gradient: linear-gradient(135deg, hsl(158 64% 52%), hsl(158 64% 42%));
-    --code-gradient: linear-gradient(135deg, hsl(158 64% 52%), hsl(262 83% 58%));
-    --marketing-gradient: linear-gradient(135deg, hsl(158 64% 52%), hsl(25 95% 53%));
-    --glow-primary: 0 4px 20px hsl(158 64% 52% / 0.15);
-    --glow-hover: 0 8px 25px hsl(158 64% 52% / 0.25);
-    --glow-code: 0 4px 20px hsl(262 83% 58% / 0.15);
-    --glow-marketing: 0 4px 20px hsl(25 95% 53% / 0.15);
+    /* Playful Portfolio Colors */
+    --hero-gradient: linear-gradient(135deg, hsl(25 95% 95%), hsl(120 60% 95%));
+    --section-gradient: linear-gradient(180deg, hsl(25 95% 98%), hsl(0 0% 100%));
+    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(25 95% 98%));
+    --primary-gradient: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 43%));
+    --secondary-gradient: linear-gradient(135deg, hsl(120 60% 50%), hsl(120 60% 40%));
+    --orange-green-gradient: linear-gradient(135deg, hsl(25 95% 53%), hsl(120 60% 50%));
+    --glow-primary: 0 4px 20px hsl(25 95% 53% / 0.25);
+    --glow-hover: 0 8px 25px hsl(25 95% 53% / 0.35);
+    --glow-secondary: 0 4px 20px hsl(120 60% 50% / 0.25);
     
     /* Modern Shadows */
     --shadow-elegant: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
@@ -127,7 +127,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     scroll-behavior: smooth;
   }
 }
@@ -223,17 +223,25 @@
   }
   
   .gradient-text-code {
-    background: var(--code-gradient);
+    background: var(--orange-green-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   
   .gradient-text-marketing {
-    background: var(--marketing-gradient);
+    background: var(--orange-green-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  
+  .orange-green-gradient {
+    background: var(--orange-green-gradient);
+  }
+  
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
   }
   
   .glass-effect {

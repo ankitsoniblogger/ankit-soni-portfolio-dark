@@ -28,9 +28,9 @@ const Hero = () => {
 
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20">
-      {/* Green Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-100/40 via-emerald-50/30 to-background"></div>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20 font-playful">
+      {/* Orange & Green Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-100/60 via-green-100/40 to-orange-50/30"></div>
       
       <div className="container mx-auto px-4 md:px-6 z-10 relative max-w-5xl">
         <div className="text-center animate-fade-in-up">
@@ -43,9 +43,9 @@ const Hero = () => {
               </span>
             </h1>
             <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3 py-1.5">
-                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                <span className="text-emerald-600 text-sm font-medium">
+              <div className="flex items-center gap-2 bg-green-500/15 border border-green-400/30 rounded-full px-4 py-2 shadow-lg">
+                <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-sm"></span>
+                <span className="text-green-700 text-sm font-semibold">
                   Available for hire
                 </span>
               </div>
@@ -91,7 +91,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-12 md:mb-16">
             <Button
               size="lg"
-              className="primary-gradient hover:scale-105 transition-smooth shadow-3d text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto relative overflow-hidden group hover:shadow-3d-hover"
+              className="orange-green-gradient hover:scale-105 transition-smooth shadow-3d text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto relative overflow-hidden group hover:shadow-3d-hover font-semibold"
               onClick={() =>
                 window.open(
                   "https://drive.google.com/file/d/1ApXOf6ZGJU2uMSnlxJE5I3OUTPs89el3/view",
@@ -101,12 +101,12 @@ const Hero = () => {
             >
               <span className="relative z-10">Download Resume</span>
               <Download className="ml-2 w-4 h-4 relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-smooth shadow-3d-outline hover:shadow-3d text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto relative overflow-hidden group bg-white/50 backdrop-blur-sm"
+              className="border-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-smooth shadow-3d-outline hover:shadow-3d text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto relative overflow-hidden group bg-white/50 backdrop-blur-sm font-semibold"
               onClick={() =>
                 document
                   .getElementById("projects")
